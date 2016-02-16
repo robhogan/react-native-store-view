@@ -1,0 +1,24 @@
+{
+  "name": "react-native-store-view",
+  "version": "0.0.0-master",
+  "description": "Wraps SKStoreProductViewController for use in react-native projects",
+  "main": "index.ios.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rh389/react-native-store-view.git"
+  },
+  "keywords": [
+    "react-native",
+    "SKStoreProductViewController",
+    "ios"
+  ],
+  "author": "Rob Hogan <roberthogan@blueyonder.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rh389/react-native-store-view/issues"
+  },
+  "homepage": "https://github.com/rh389/react-native-store-view#readme"
+}

@@ -9,32 +9,16 @@
 Pod::Spec.new do |s|
   s.name             = "ReactNativeStoreView"
   s.version          = "0.1.0"
-  s.summary          = "A short description of ReactNativeStoreView."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
-  s.description      = <<-DESC
-                       DESC
-
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/ReactNativeStoreView"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.summary          = "A React Native wrapper for SKStoreProductView."
+  s.description      = "A React Native wrapper for SKStoreProductView, for iOS App Store interaction from RN apps."
+  s.homepage         = "https://github.com/rh389/react-native-store-view.git"
   s.license          = 'MIT'
-  s.author           = { "rh389" => "roberthogan@blueyonder.co.uk" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/ReactNativeStoreView.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.author           = { "Rob Hogan" => "roberthogan@blueyonder.co.uk" }
+  s.source           = { :git => "https://github.com/rh389/react-native-store-view.git", :tag => s.version.to_s }
   s.platform     = :ios, '7.0'
   s.requires_arc = true
-
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'ReactNativeStoreView' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.source_files = 'RJH*'
+  s.public_header_files = '*.h'
+  s.frameworks = 'UIKit', 'StoreKit'
+  s.dependency 'React', '~> 0.19'
 end
