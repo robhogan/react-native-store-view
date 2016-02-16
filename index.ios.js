@@ -1,15 +1,11 @@
 /* @flow */
 
-import { NativeModules } from 'react-native';
+import {
+  NativeModules,
+  NativeAppEventEmitter
+} from 'react-native';
 
-var { NativeAppEventEmitter } = require('react-native');
-
-var subscription = NativeAppEventEmitter.addListener(
-  'EventReminder',
-  (reminder) => console.log(reminder.name)
-);
-
-const NativeStoreProductViewManager = NativeModules.RJHStoreViewManager;
+const NativeStoreViewManager = NativeModules.RJHStoreViewManager;
 
 type LoadProductParameters = {
   iTunesItemIdentifier: string,
@@ -18,10 +14,10 @@ type LoadProductParameters = {
   providerToken?: string
 }
 
-export class StoreProductViewManager {
+export default class StoreViewManager {
   static loadProductWithParameters(params: LoadProductParameters): Promise {
     return new Promise((resolve, reject) => {
-      NativeStoreProductViewManager.loadProductWithParameters(params, (err, result) => {
+      NativeStoreViewManager.loadProductWithParameters(params, (err, result) => {
         if (err) {
           return reject(err);
         }
@@ -32,7 +28,7 @@ export class StoreProductViewManager {
 
   static presentViewController(animated = true): Promise {
     return new Promise((resolve, reject) => {
-      NativeStoreProductViewManager.presentViewController(animated, (err, result) => {
+      NativeStoreViewManager.presentViewController(animated, (err, result) => {
         if (err) {
           return reject(err);
         }
