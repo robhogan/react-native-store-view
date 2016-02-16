@@ -7,6 +7,10 @@ import {
 
 const NativeStoreViewManager = NativeModules.RJHStoreViewManager;
 
+//This is needed to ensure that the RCTNativeAppEventEmitter module is registered (even if we're not listening) so that
+//sendAppEventWithName does not fail from the native end.
+NativeAppEventEmitter;
+
 type LoadProductParameters = {
   iTunesItemIdentifier: string,
   affiliateToken?: string,
