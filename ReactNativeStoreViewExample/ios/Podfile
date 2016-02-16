@@ -1,0 +1,14 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '8.0'
+# Uncomment this line if you're using Swift
+# use_frameworks!
+
+target 'ReactNativeStoreViewExample' do
+	pod 'React', :subspecs => ['Core’], :path => '../node_modules/react-native'
+    pod 'ReactNativeStoreView', :path => '../node_modules/react-native-store-view'
+end
+
+target 'ReactNativeStoreViewExampleTests' do
+
+end
+

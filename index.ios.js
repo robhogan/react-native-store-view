@@ -12,7 +12,7 @@ const NativeStoreViewManager = NativeModules.RJHStoreViewManager;
 NativeAppEventEmitter;
 
 type LoadProductParameters = {
-  iTunesItemIdentifier: string,
+  iTunesItemIdentifier: number,
   affiliateToken?: string,
   campaignToken?: string,
   providerToken?: string

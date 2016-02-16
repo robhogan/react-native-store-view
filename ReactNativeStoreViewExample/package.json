@@ -1,0 +1,30 @@
+{
+  "name": "react-native-store-view-example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start"
+  },
+  "dependencies": {
+    "react-native": "^0.19.0",
+    "react-native-store-view": "github:rh389/react-native-store-view"
+  },
+  "description": "An example project for react-native-store-view",
+  "main": "index.ios.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rh389/react-native-store-view.git"
+  },
+  "keywords": [
+    "React",
+    "SKStoreProductViewController",
+    "iOS"
+  ],
+  "author": "Rob Hogan <roberthogan@blueyonder.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rh389/react-native-store-view/issues"
+  },
+  "homepage": "https://github.com/rh389/react-native-store-view#readme"
+}
