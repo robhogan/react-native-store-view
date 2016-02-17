@@ -1,6 +1,6 @@
 # ReactNativeStoreView
 
-[![CI Status](http://img.shields.io/travis/rh389/ReactNativeStoreView.svg?style=flat)](https://travis-ci.org/rh389/ReactNativeStoreView)
+[![CI Status](https://travis-ci.org/rh389/react-native-store-view.svg?branch=master)](https://travis-ci.org/rh389/react-native-store-view)
 [![Version](https://img.shields.io/cocoapods/v/ReactNativeStoreView.svg?style=flat)](http://cocoapods.org/pods/ReactNativeStoreView)
 [![License](https://img.shields.io/cocoapods/l/ReactNativeStoreView.svg?style=flat)](http://cocoapods.org/pods/ReactNativeStoreView)
 [![Platform](https://img.shields.io/cocoapods/p/ReactNativeStoreView.svg?style=flat)](http://cocoapods.org/pods/ReactNativeStoreView)
