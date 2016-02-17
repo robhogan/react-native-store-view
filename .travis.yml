@@ -5,9 +5,8 @@
 language: objective-c
 # cache: cocoapods
 # podfile: Example/Podfile
-node_js:
-  - "4"
 before_install:
+ - nvm use 5
  - npm install
  - pod install --project-directory=ReactNativeStoreViewExample
 script:
