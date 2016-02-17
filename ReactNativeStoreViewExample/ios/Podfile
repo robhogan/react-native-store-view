@@ -4,7 +4,7 @@ platform :ios, '8.0'
 # use_frameworks!
 
 target 'ReactNativeStoreViewExample' do
-	pod 'React', :subspecs => ['Core’], :path => '../node_modules/react-native'
+	pod 'React', :subspecs => ['Core'], :path => '../node_modules/react-native'
     pod 'ReactNativeStoreView', :path => '../node_modules/react-native-store-view'
 end
 

@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/rh389/react-native-store-view/issues"
   },
+  "devDependencies": {
+    "react-native": "~0.20"
+  },
   "homepage": "https://github.com/rh389/react-native-store-view#readme"
 }

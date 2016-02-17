@@ -17,8 +17,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/rh389/react-native-store-view.git", :tag => s.version.to_s }
   s.platform     = :ios, '7.0'
   s.requires_arc = true
-  s.source_files = 'RJHStoreViewManager.{h,m}'
-  s.public_header_files = '*.h'
+  s.source_files = 'ios/RJHStoreViewManager.{h,m}'
+  s.public_header_files = 'ios/*.h'
   s.frameworks = 'UIKit', 'StoreKit'
-  s.dependency 'React', '~> 0.19'
+  s.dependency 'React'
 end
