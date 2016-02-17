@@ -3,12 +3,24 @@
 # * https://github.com/supermarin/xcpretty#usage
 
 language: objective-c
-# cache: cocoapods
-# podfile: Example/Podfile
-before_install:
- - nvm use 5
- - npm install
- - pod install --project-directory=ReactNativeStoreViewExample
+
+osx_image: xcode7.2
+
+cache:
+  directories:
+    - node_modules
+    - .nvm
+
+install:
+  - brew reinstall nvm
+  - mkdir -p .nvm
+  - export NVM_DIR="$PWD/.nvm"
+  - source $(brew --prefix nvm)/nvm.sh
+  - nvm install 5
+  - npm config set spin=false
+  - npm install -g flow-bin@`node -p "require('fs').readFileSync('.flowconfig', 'utf8').split('[version]')[1].trim()"`
+  - npm install
+
 script:
-- set -o pipefail && xcodebuild test -workspace ReactNativeStoreViewExample/ios/ReactNativeStoreViewExample.xcworkspace -scheme ReactNativeStoreViewExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint
+  - set -o pipefail && xcodebuild test -workspace ReactNativeStoreViewExample/ios/ReactNativeStoreViewExample.xcworkspace -scheme ReactNativeStoreViewExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+  - pod lib lint
