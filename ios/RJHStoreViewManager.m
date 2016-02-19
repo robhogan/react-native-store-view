@@ -10,23 +10,18 @@ RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTResponseSenderBlock)callback)
 {
-    //Validate args
-    if ([args objectForKey:@"iTunesItemIdentifier"] == nil ||
-        ![[args objectForKey:@"iTunesItemIdentifier"] isKindOfClass:[NSNumber class]]) {
-        return callback(@[RCTMakeError(@"Must specify an iTunesItemIdentifier as a number", nil, args)]);
-    }
+    NSError *error = nil;
+    NSDictionary* nativeParams = [self transformAndValidateLoadProductParamaters:args error:&error];
 
+    if (nativeParams == nil) {
+        return callback(@[error.userInfo]);
+    }
+    
     // Initialize the Store Product View
     self.storeProductView = [[SKStoreProductViewController alloc] init];
     self.storeProductView.delegate = self;
 
-    [self.storeProductView loadProductWithParameters:
-        @{
-          SKStoreProductParameterITunesItemIdentifier : [args objectForKey:@"iTunesItemIdentifier"],
-            SKStoreProductParameterAffiliateToken: [args objectForKey:@"affiliateToken"],
-            SKStoreProductParameterCampaignToken: [args objectForKey:@"campaignToken"],
-            SKStoreProductParameterProviderToken: [args objectForKey:@"providerToken"]
-        } completionBlock:^(BOOL result, NSError *error) {
+    [self.storeProductView loadProductWithParameters: nativeParams completionBlock:^(BOOL result, NSError *error) {
         if (!result) {
             if (error) {
                 callback(@[RCTMakeError(@"Failed to load product.", error, args)]);
@@ -75,6 +70,36 @@ RCT_EXPORT_METHOD(dismiss)
     NSLog(@"[RJHStoreViewManager] SKStoreProductViewController dismissed.");
 
     [self.bridge.eventDispatcher sendAppEventWithName:@"ReactNativeStoreViewOnDismiss" body:nil];
+}
+
+-(NSDictionary *)transformAndValidateLoadProductParamaters:(nonnull NSDictionary *)args error:(NSError **)errorPtr
+{
+    //Validate args
+    if ([args objectForKey:@"iTunesItemIdentifier"] == nil ||
+        ![[args objectForKey:@"iTunesItemIdentifier"] isKindOfClass:[NSNumber class]]) {
+        *errorPtr = [NSError errorWithDomain:@"ReactNativeStoreView"
+                                        code:400
+                                    userInfo:RCTMakeError(@"Must specify an iTunesItemIdentifier as a number", nil, args)];
+        return nil;
+    }
+
+    NSMutableDictionary* nativeParams = [[NSMutableDictionary alloc] initWithCapacity:4];
+
+    [nativeParams setObject: [args objectForKey:@"iTunesItemIdentifier"] forKey: SKStoreProductParameterITunesItemIdentifier];
+
+    if ([args objectForKey:@"affiliateToken"] != nil && [[args objectForKey:@"affiliateToken"] isKindOfClass:[NSString class]]) {
+        [nativeParams setObject: [args objectForKey:@"affiliateToken"] forKey: SKStoreProductParameterAffiliateToken];
+    }
+
+    if ([args objectForKey:@"campaignToken"] != nil && [[args objectForKey:@"campaignToken"] isKindOfClass:[NSString class]]) {
+        [nativeParams setObject: [args objectForKey:@"campaignToken"] forKey: SKStoreProductParameterCampaignToken];
+    }
+
+    if ([args objectForKey:@"providerToken"] != nil && [[args objectForKey:@"providerToken"] isKindOfClass:[NSString class]]) {
+        [nativeParams setObject: [args objectForKey:@"providerToken"] forKey: SKStoreProductParameterProviderToken];
+    }
+
+    return nativeParams;
 }
 
 @end
