@@ -3,7 +3,7 @@ PODS:
     - React/Core (= 0.19.0)
   - React/Core (0.19.0)
   - ReactNativeStoreView (0.1.0):
-    - React (~> 0.19)
+    - React
 
 DEPENDENCIES:
   - React/Core (from `../node_modules/react-native`)
@@ -17,6 +17,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   React: 788590e9bb1784fac953ded1b325f16d9e817090
-  ReactNativeStoreView: 959a2f276dae04c6d86449515da87b689bb08b67
+  ReactNativeStoreView: a424b91571e9db63f158396310a4e35de4a6c5f1
 
 COCOAPODS: 0.39.0

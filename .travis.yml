@@ -17,10 +17,11 @@ install:
   - export NVM_DIR="$PWD/.nvm"
   - source $(brew --prefix nvm)/nvm.sh
   - nvm install 5
+  - nvm use 5
   - npm config set spin=false
   - npm install -g flow-bin@`node -p "require('fs').readFileSync('.flowconfig', 'utf8').split('[version]')[1].trim()"`
-  - npm install
+  - cd ReactNativeStoreViewExample && npm install
+  - cd ios && pod install --no-repo-update
 
 script:
-  - set -o pipefail && xcodebuild test -workspace ReactNativeStoreViewExample/ios/ReactNativeStoreViewExample.xcworkspace -scheme ReactNativeStoreViewExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
-  - pod lib lint
+  - set -o pipefail && xcodebuild test -workspace ReactNativeStoreViewExample.xcworkspace -scheme ReactNativeStoreViewExample -destination 'platform=iOS Simulator,name=iPhone 6' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
