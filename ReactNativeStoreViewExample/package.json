@@ -1,6 +1,6 @@
 {
   "name": "react-native-store-view-example",
-  "version": "0.0.1",
+  "version": "0.0.0-master",
   "private": true,
   "scripts": {
     "start": "react-native start"
