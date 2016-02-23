@@ -57,6 +57,9 @@ class ReactNativeStoreViewExample extends React.Component {
 
 See the `ReactNativeStoreViewExample` project for more.
 
+## Known limitations
+`SKStoreProductViewController` is *not supported* for use in a simulator environment, and so neither is this module. Currently, the `loadProductWithParameters` promise will never complete in a simulator. You'll need to test your application using a real device.
+
 ## License
 
 ReactNativeStoreView is available under the MIT license. See the LICENSE file for more info.
