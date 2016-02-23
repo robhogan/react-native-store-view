@@ -43,8 +43,8 @@ class ReactNativeStoreViewExample extends React.Component {
       })
       .then(() => {
         console.log('SKStoreProductViewController successfully loaded the product over the net, but is not yet displaying anything');
-        StoreViewManager.presentViewController());
-      }
+        StoreViewManager.presentViewController();
+      })
       .then(() => {
         console.log('SKStoreProductViewController is now modal. When it is dismissed, we'll return to this view.');
       })
