@@ -1,7 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
 
 import React, {
@@ -28,17 +24,19 @@ class ReactNativeStoreViewExample extends Component {
     );
   }
 
-  componentDidMount() {
-
-  }
-
   onPressButton() {
     StoreViewManager.loadProductWithParameters({
-        iTunesItemIdentifier: 364709193
+        iTunesItemIdentifier: 364709193 //The only mandatory parameter is a numeric App Store ID. This one is iBooks.
+        //, affiliateToken: 'string'
+        //, campaignToken: 'string'
+        //, providerToken: 'string'
       })
-      .then(() => StoreViewManager.presentViewController())
       .then(() => {
-        console.log('SKStoreProductViewController presented')
+        console.log('SKStoreProductViewController successfully loaded the product over the net, but is not yet displaying anything');
+        StoreViewManager.presentViewController();
+      })
+      .then(() => {
+        console.log('SKStoreProductViewController is now modal. When it is dismissed, we\'ll return to this view.');
       })
       .catch((err) => {
         console.error(err);

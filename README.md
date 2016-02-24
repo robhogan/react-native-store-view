@@ -15,7 +15,7 @@ modifying the path as necessary.
 
 Finally, run `pod install` from the command line to link the pod to your xcode project.
 
-## Example Usage
+## Example usage
 
 ```
 import React from 'react-native';
@@ -46,7 +46,7 @@ class ReactNativeStoreViewExample extends React.Component {
         StoreViewManager.presentViewController();
       })
       .then(() => {
-        console.log('SKStoreProductViewController is now modal. When it is dismissed, we'll return to this view.');
+        console.log('SKStoreProductViewController is now modal. When it is dismissed, we\'ll return to this view.');
       })
       .catch((err) => {
         console.error(err);
@@ -58,7 +58,7 @@ class ReactNativeStoreViewExample extends React.Component {
 See the `ReactNativeStoreViewExample` project for more.
 
 ## Known limitations
-`SKStoreProductViewController` is *not supported* for use in a simulator environment, and so neither is this module. Currently, the `loadProductWithParameters` promise will never complete in a simulator. You'll need to test your application using a real device.
+`SKStoreProductViewController` is *not supported* for use in a simulator environment, and so neither is this module. You'll need to test your application using a real device.
 
 ## License
 

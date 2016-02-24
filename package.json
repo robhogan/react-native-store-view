@@ -1,6 +1,6 @@
 {
   "name": "react-native-store-view",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Wraps SKStoreProductViewController for use in react-native projects",
   "main": "index.ios.js",
   "scripts": {
