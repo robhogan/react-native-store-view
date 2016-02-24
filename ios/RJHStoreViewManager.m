@@ -1,3 +1,4 @@
+#import <TargetConditionals.h>
 #import "RJHStoreViewManager.h"
 #import "RCTUtils.h"
 #import "RCTLog.h"
@@ -16,7 +17,11 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
     if (nativeParams == nil) {
         return callback(@[error.userInfo]);
     }
-    
+
+    #if TARGET_IPHONE_SIMULATOR
+    return callback(@[RCTMakeError(@"ReactNativeStoreView cannot be used in a Simulator.", error, args)]);
+    #endif
+
     // Initialize the Store Product View
     self.storeProductView = [[SKStoreProductViewController alloc] init];
     self.storeProductView.delegate = self;
