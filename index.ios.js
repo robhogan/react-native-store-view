@@ -11,7 +11,7 @@ const NativeStoreViewManager = NativeModules.RJHStoreViewManager;
 //sendAppEventWithName does not fail from the native end.
 NativeAppEventEmitter;
 
-type LoadProductParameters = {
+export type LoadProductParameters = {
   iTunesItemIdentifier: number,
   affiliateToken?: string,
   campaignToken?: string,
