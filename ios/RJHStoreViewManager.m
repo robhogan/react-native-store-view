@@ -43,8 +43,8 @@ RCT_EXPORT_METHOD(presentViewController: (BOOL)animated callback: (RCTResponseSe
 {
     dispatch_async(dispatch_get_main_queue(),
                    ^{
-                       UIViewController *ctrl = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
-                       [ctrl presentViewController:self.storeProductView animated:animated completion:^() {
+                       UIViewController *rootViewController = RCTPresentedViewController();
+                       [rootViewController presentViewController:self.storeProductView animated:animated completion:^() {
                            if (callback != nil) {
                                callback(@[[NSNull null]]);
                            }
