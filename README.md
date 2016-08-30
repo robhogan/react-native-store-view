@@ -18,29 +18,30 @@ Finally, run `pod install` from the command line to link the pod to your xcode p
 ## Example usage
 
 ```
-import React from 'react-native';
-import StoreViewManager from 'react-native-store-view';
+import React, {Component} from "react";
+import {Text, View, TouchableHighlight} from "react-native";
+import StoreViewManager from "react-native-store-view";
 
-class ReactNativeStoreViewExample extends React.Component {
+class ReactNativeStoreViewExample extends Component {
   render() {
     return (
-      <React.View>
-        <React.TouchableHighlight onPress={this.onPressButton}>
-          <React.Text>
+      <View>
+        <TouchableHighlight onPress={this.onPressButton}>
+          <Text>
             Tap here to open the app store
-          </React.Text>
-        </React.TouchableHighlight>
-      </React.View>
+          </Text>
+        </TouchableHighlight>
+      </View>
     );
   }
 
   onPressButton() {
     StoreViewManager.loadProductWithParameters({
-        iTunesItemIdentifier: 364709193 //The only mandatory parameter is a numeric App Store ID. This one is iBooks.
-        //, affiliateToken: 'string'
-        //, campaignToken: 'string'
-        //, providerToken: 'string'
-      })
+      iTunesItemIdentifier: 364709193 //The only mandatory parameter is a numeric App Store ID. This one is iBooks.
+      //, affiliateToken: 'string'
+      //, campaignToken: 'string'
+      //, providerToken: 'string'
+    })
       .then(() => {
         console.log('SKStoreProductViewController successfully loaded the product over the net, but is not yet displaying anything');
         StoreViewManager.presentViewController();
