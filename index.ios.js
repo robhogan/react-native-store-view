@@ -40,6 +40,28 @@ export default class StoreViewManager {
     });
   }
 
+  static isAvailable(): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      NativeStoreViewManager.isAvailable((err, available) => {
+        if (err) {
+          return reject(err);
+        }
+        resolve(available);
+      });
+    });
+  }
+
+  static dismiss(animated: boolean = true): Promise<void> {
+    return new Promise((resolve, reject) => {
+      NativeStoreViewManager.dismiss(animated, err => {
+        if (err) {
+          return reject(err);
+        }
+        resolve();
+      });
+    });
+  }
+
   static addListener(event: StoreViewEventName, listener: (payload: any) => any) {
     return moduleEventEmitter.addListener(event, listener);
   }

@@ -21,17 +21,15 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
         return callback(@[error.userInfo]);
     }
 
-    #if TARGET_IPHONE_SIMULATOR
+#if TARGET_IPHONE_SIMULATOR
     return callback(@[RCTMakeError(@"ReactNativeStoreView cannot be used in a Simulator.", error, args)]);
-    #endif
+#endif
 
     // Initialize the Store Product View
     self.storeProductView = [[SKStoreProductViewController alloc] init];
     self.storeProductView.delegate = self;
 
-    if (self.hasListeners) {
-        [self sendEventWithName:@"onLoading" body:nil];
-    }
+    [self sendEventWithNameIfListening:@"onLoading" body:nil];
 
     [self.storeProductView loadProductWithParameters: nativeParams completionBlock:^(BOOL result, NSError *error) {
         if (!result) {
@@ -41,9 +39,7 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
                 callback(@[RCTMakeError(@"Unknown error loading product.", nil, args)]);
             }
         } else {
-            if (self.hasListeners) {
-                [self sendEventWithName:@"onLoaded" body:nil];
-            }
+            [self sendEventWithNameIfListening:@"onLoaded" body:nil];
             callback(@[[NSNull null]]);
         }
     }];
@@ -52,48 +48,53 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
 RCT_EXPORT_METHOD(presentViewController: (BOOL)animated callback: (RCTResponseSenderBlock)callback)
 {
     UIViewController *rootViewController = RCTPresentedViewController();
-    if (self.hasListeners) {
-        [self sendEventWithName:@"onPresenting" body:nil];
-    }
+    [self sendEventWithNameIfListening:@"onPresenting" body:nil];
     [rootViewController presentViewController:self.storeProductView animated:animated completion:^() {
-        if (self.hasListeners) {
-            [self sendEventWithName:@"onPresented" body:nil];
-        }
+        [self sendEventWithNameIfListening:@"onPresented" body:nil];
         if (callback != nil) {
             callback(@[[NSNull null]]);
         }
     }];
 }
 
-
-RCT_EXPORT_METHOD(isAvailable:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXPORT_METHOD(isAvailable:(nonnull RCTResponseSenderBlock)callback)
 {
     if ([SKStoreProductViewController class]) {
         // SKStoreProductViewController is available
-        return resolve(@true);
+        callback(@[[NSNull null], @YES]);
     } else {
-        return reject(nil, @"[RJHStoreViewManager] SKStoreProductViewController is unavailable.", nil);
+        callback(@[[NSNull null], @NO]);
     }
 }
 
-RCT_EXPORT_METHOD(dismiss)
+-(void)sendEventWithNameIfListening: (NSString *) name body:(id)body
 {
-    [self productViewControllerDidFinish:self.storeProductView];
+    if (self.hasListeners) {
+        [self sendEventWithName:name body:body];
+    }
+}
+
+RCT_EXPORT_METHOD(dismiss: (BOOL)animated callback: (RCTResponseSenderBlock)callback)
+{
+    [self.storeProductView dismissViewControllerAnimated:animated completion:^{
+        [self sendEventWithNameIfListening:@"onDismissed" body:@{@"dismissedByUser": @NO}];
+        if (callback != nil) {
+            callback(@[[NSNull null]]);
+        }
+    }];
+
+    if (self.hasListeners) {
+        [self sendEventWithNameIfListening:@"onDismissing" body:@{@"dismissedByUser": @NO}];
+    }
 }
 
 -(void)productViewControllerDidFinish:(nonnull SKStoreProductViewController *)controller
 {
     [controller dismissViewControllerAnimated:true completion:^{
-        if (self.hasListeners) {
-            [self sendEventWithName:@"onDismissed" body:nil];
-        }
+        [self sendEventWithNameIfListening:@"onDismissed" body:@{@"dismissedByUser": @YES}];
     }];
-    NSLog(@"[RJHStoreViewManager] SKStoreProductViewController dismissed.");
 
-    if (self.hasListeners) {
-        [self sendEventWithName:@"onDismissing" body:nil];
-    }
+    [self sendEventWithNameIfListening:@"onDismissing" body:@{@"dismissedByUser": @YES}];
 }
 
 -(NSDictionary *)transformAndValidateLoadProductParamaters:(nonnull NSDictionary *)args error:(NSError **)errorPtr
@@ -141,7 +142,7 @@ RCT_EXPORT_METHOD(dismiss)
              @"onPresented",
              @"onDismissing",
              @"onDismissed"
-    ];
+             ];
 }
 
 @end
