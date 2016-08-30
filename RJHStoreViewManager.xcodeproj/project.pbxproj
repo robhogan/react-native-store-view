@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4F2B8021D75AAE300A2DB9D /* RJHStoreViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F2B8011D75AAE300A2DB9D /* RJHStoreViewManager.m */; };
+		D4F2B81B1D75AD1B00A2DB9D /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F2B81A1D75ACFD00A2DB9D /* libReact.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4F2B8191D75ACFD00A2DB9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4F2B8151D75ACFD00A2DB9D /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
+			remoteInfo = React;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D4F2B7F11D75AA3500A2DB9D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D4F2B7F31D75AA3500A2DB9D /* libRJHStoreViewManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRJHStoreViewManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F2B8001D75AAE300A2DB9D /* RJHStoreViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJHStoreViewManager.h; path = ios/RJHStoreViewManager.h; sourceTree = "<group>"; };
+		D4F2B8011D75AAE300A2DB9D /* RJHStoreViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJHStoreViewManager.m; path = ios/RJHStoreViewManager.m; sourceTree = "<group>"; };
+		D4F2B8151D75ACFD00A2DB9D /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4F2B7F01D75AA3500A2DB9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F2B81B1D75AD1B00A2DB9D /* libReact.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4F2B7EA1D75AA3500A2DB9D = {
+			isa = PBXGroup;
+			children = (
+				D4F2B8141D75ACDE00A2DB9D /* Libraries */,
+				D4F2B7FF1D75AACE00A2DB9D /* RJHStoreViewManager */,
+				D4F2B7F41D75AA3500A2DB9D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4F2B7F41D75AA3500A2DB9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4F2B7F31D75AA3500A2DB9D /* libRJHStoreViewManager.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4F2B7FF1D75AACE00A2DB9D /* RJHStoreViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				D4F2B8001D75AAE300A2DB9D /* RJHStoreViewManager.h */,
+				D4F2B8011D75AAE300A2DB9D /* RJHStoreViewManager.m */,
+			);
+			name = RJHStoreViewManager;
+			sourceTree = "<group>";
+		};
+		D4F2B8141D75ACDE00A2DB9D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				D4F2B8151D75ACFD00A2DB9D /* React.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		D4F2B8161D75ACFD00A2DB9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4F2B81A1D75ACFD00A2DB9D /* libReact.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4F2B7F21D75AA3500A2DB9D /* RJHStoreViewManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4F2B7FC1D75AA3500A2DB9D /* Build configuration list for PBXNativeTarget "RJHStoreViewManager" */;
+			buildPhases = (
+				D4F2B7EF1D75AA3500A2DB9D /* Sources */,
+				D4F2B7F01D75AA3500A2DB9D /* Frameworks */,
+				D4F2B7F11D75AA3500A2DB9D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RJHStoreViewManager;
+			productName = RJHStoreViewManager;
+			productReference = D4F2B7F31D75AA3500A2DB9D /* libRJHStoreViewManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4F2B7EB1D75AA3500A2DB9D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Rob Hogan";
+				TargetAttributes = {
+					D4F2B7F21D75AA3500A2DB9D = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D4F2B7EE1D75AA3500A2DB9D /* Build configuration list for PBXProject "RJHStoreViewManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D4F2B7EA1D75AA3500A2DB9D;
+			productRefGroup = D4F2B7F41D75AA3500A2DB9D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D4F2B8161D75ACFD00A2DB9D /* Products */;
+					ProjectRef = D4F2B8151D75ACFD00A2DB9D /* React.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D4F2B7F21D75AA3500A2DB9D /* RJHStoreViewManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D4F2B81A1D75ACFD00A2DB9D /* libReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReact.a;
+			remoteRef = D4F2B8191D75ACFD00A2DB9D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4F2B7EF1D75AA3500A2DB9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F2B8021D75AAE300A2DB9D /* RJHStoreViewManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D4F2B7FA1D75AA3500A2DB9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native/React/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D4F2B7FB1D75AA3500A2DB9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native/React/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4F2B7FD1D75AA3500A2DB9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/node_modules/react-native/React/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D4F2B7FE1D75AA3500A2DB9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/node_modules/react-native/React/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4F2B7EE1D75AA3500A2DB9D /* Build configuration list for PBXProject "RJHStoreViewManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4F2B7FA1D75AA3500A2DB9D /* Debug */,
+				D4F2B7FB1D75AA3500A2DB9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4F2B7FC1D75AA3500A2DB9D /* Build configuration list for PBXNativeTarget "RJHStoreViewManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4F2B7FD1D75AA3500A2DB9D /* Debug */,
+				D4F2B7FE1D75AA3500A2DB9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4F2B7EB1D75AA3500A2DB9D /* Project object */;
+}
