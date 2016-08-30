@@ -2,12 +2,15 @@
 #import "RJHStoreViewManager.h"
 #import "RCTUtils.h"
 #import "RCTLog.h"
-#import "RCTEventDispatcher.h"
 
 @implementation RJHStoreViewManager
-@synthesize bridge = _bridge;
 
 RCT_EXPORT_MODULE();
+
+- (dispatch_queue_t)methodQueue
+{
+    return dispatch_get_main_queue();
+}
 
 RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTResponseSenderBlock)callback)
 {
@@ -41,15 +44,12 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
 
 RCT_EXPORT_METHOD(presentViewController: (BOOL)animated callback: (RCTResponseSenderBlock)callback)
 {
-    dispatch_async(dispatch_get_main_queue(),
-                   ^{
-                       UIViewController *rootViewController = RCTPresentedViewController();
-                       [rootViewController presentViewController:self.storeProductView animated:animated completion:^() {
-                           if (callback != nil) {
-                               callback(@[[NSNull null]]);
-                           }
-                       }];
-                   });
+    UIViewController *rootViewController = RCTPresentedViewController();
+    [rootViewController presentViewController:self.storeProductView animated:animated completion:^() {
+        if (callback != nil) {
+            callback(@[[NSNull null]]);
+        }
+    }];
 }
 
 
@@ -74,7 +74,9 @@ RCT_EXPORT_METHOD(dismiss)
     [controller dismissViewControllerAnimated:true completion:nil];
     NSLog(@"[RJHStoreViewManager] SKStoreProductViewController dismissed.");
 
-    [self.bridge.eventDispatcher sendAppEventWithName:@"ReactNativeStoreViewOnDismiss" body:nil];
+    if (self.hasListeners) {
+        [self sendEventWithName:@"onDismiss" body:nil];
+    }
 }
 
 -(NSDictionary *)transformAndValidateLoadProductParamaters:(nonnull NSDictionary *)args error:(NSError **)errorPtr
@@ -105,6 +107,18 @@ RCT_EXPORT_METHOD(dismiss)
     }
 
     return nativeParams;
+}
+
+-(void)startObserving {
+    self.hasListeners = YES;
+}
+
+-(void)stopObserving {
+    self.hasListeners = NO;
+}
+
+-(NSArray<NSString *> *)supportedEvents {
+    return @[@"onDismiss"];
 }
 
 @end

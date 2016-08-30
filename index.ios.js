@@ -2,14 +2,11 @@
 
 import {
   NativeModules,
-  NativeAppEventEmitter
+  NativeEventEmitter
 } from 'react-native';
 
 const NativeStoreViewManager = NativeModules.RJHStoreViewManager;
-
-//This is needed to ensure that the RCTNativeAppEventEmitter module is registered (even if we're not listening) so that
-//sendAppEventWithName does not fail from the native end.
-NativeAppEventEmitter;
+const moduleEventEmitter = new NativeEventEmitter(NativeStoreViewManager);
 
 export type LoadProductParameters = {
   iTunesItemIdentifier: number,
@@ -39,5 +36,21 @@ export default class StoreViewManager {
         resolve();
       });
     });
+  }
+
+  static addListener(event, listener) {
+    return moduleEventEmitter.addListener(event, listener);
+  }
+
+  static removeListener(event, listener) {
+    moduleEventEmitter.removeListener(event, listener);
+  }
+
+  static once(event, callback) {
+    const listener = (payload) => {
+      callback(payload);
+      this.addListener(event, listener);
+    };
+    this.removeListener(event, listener);
   }
 }

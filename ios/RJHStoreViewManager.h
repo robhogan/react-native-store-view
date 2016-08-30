@@ -7,11 +7,13 @@
 
 #import <Foundation/Foundation.h>
 #import "RCTBridgeModule.h"
+#import "RCTEventEmitter.h"
 
 @import StoreKit;
 
-@interface RJHStoreViewManager : NSObject <RCTBridgeModule, SKStoreProductViewControllerDelegate>
+@interface RJHStoreViewManager : RCTEventEmitter <RCTBridgeModule, SKStoreProductViewControllerDelegate>
 
 @property (nonatomic) SKStoreProductViewController *storeProductView;
+@property bool hasListeners;
 
 @end
