@@ -2,6 +2,8 @@
 
 [![CI Status](https://travis-ci.org/rh389/react-native-store-view.svg?branch=master)](https://travis-ci.org/rh389/react-native-store-view)
 
+![Demo gif](https://github.com/rh389/react-native-store-view/blob/master/demo.gif)
+
 ## Installation
 
 Fetch the package using npm:
@@ -17,7 +19,7 @@ Finally, run `pod install` from the command line to link the pod to your xcode p
 
 ## Example usage
 
-```
+```js
 import React, {Component} from "react";
 import {Text, View, TouchableHighlight} from "react-native";
 import StoreViewManager from "react-native-store-view";
@@ -56,11 +58,10 @@ class ReactNativeStoreViewExample extends Component {
 }
 ```
 
-See the `ReactNativeStoreViewExample` project for more.
+See the [`ReactNativeStoreViewExample`](https://github.com/rh389/react-native-store-view/tree/master/ReactNativeStoreViewExample) project for more.
 
 ## Known limitations
 `SKStoreProductViewController` is *not supported* for use in a simulator environment, and so neither is this module. You'll need to test your application using a real device.
 
 ## License
-
 ReactNativeStoreView is available under the MIT license. See the LICENSE file for more info.
