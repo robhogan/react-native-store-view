@@ -2,7 +2,7 @@ PODS:
   - React (0.30.0):
     - React/Core (= 0.30.0)
   - React/Core (0.30.0)
-  - ReactNativeStoreView (0.1.3):
+  - ReactNativeStoreView (1.0.0):
     - React
 
 DEPENDENCIES:
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   React: ed499ad8bb72560821a80fefa59e15a18f3ec75c
-  ReactNativeStoreView: 34a1f730cdc91744885c434d3092288bcfe0b3e6
+  ReactNativeStoreView: d13a8d15ce37e775a6393b2c857e33ee3f2c463c
 
 PODFILE CHECKSUM: 9e7c75a2064f676ab27aa19b3ae7db8d36d4428a
 
