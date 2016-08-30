@@ -13,7 +13,9 @@ export type LoadProductParameters = {
   affiliateToken?: string,
   campaignToken?: string,
   providerToken?: string
-}
+};
+
+export type StoreViewEventName = 'onBeginLoad' | 'onLoaded' | 'onPresent' | 'onPresented' | 'onDismiss' | 'onDismissed';
 
 export default class StoreViewManager {
   static loadProductWithParameters(params: LoadProductParameters): Promise<void> {
@@ -38,15 +40,15 @@ export default class StoreViewManager {
     });
   }
 
-  static addListener(event, listener) {
+  static addListener(event: StoreViewEventName, listener: (payload: any) => any) {
     return moduleEventEmitter.addListener(event, listener);
   }
 
-  static removeListener(event, listener) {
+  static removeListener(event: StoreViewEventName, listener: (payload: any) => any) {
     moduleEventEmitter.removeListener(event, listener);
   }
 
-  static once(event, callback) {
+  static once(event: StoreViewEventName, callback: (payload: any) => any) {
     const listener = (payload) => {
       callback(payload);
       this.addListener(event, listener);

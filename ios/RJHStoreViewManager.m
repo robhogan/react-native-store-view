@@ -29,6 +29,10 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
     self.storeProductView = [[SKStoreProductViewController alloc] init];
     self.storeProductView.delegate = self;
 
+    if (self.hasListeners) {
+        [self sendEventWithName:@"onBeginLoad" body:nil];
+    }
+
     [self.storeProductView loadProductWithParameters: nativeParams completionBlock:^(BOOL result, NSError *error) {
         if (!result) {
             if (error) {
@@ -37,6 +41,9 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
                 callback(@[RCTMakeError(@"Unknown error loading product.", nil, args)]);
             }
         } else {
+            if (self.hasListeners) {
+                [self sendEventWithName:@"onLoaded" body:nil];
+            }
             callback(@[[NSNull null]]);
         }
     }];
@@ -45,7 +52,13 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
 RCT_EXPORT_METHOD(presentViewController: (BOOL)animated callback: (RCTResponseSenderBlock)callback)
 {
     UIViewController *rootViewController = RCTPresentedViewController();
+    if (self.hasListeners) {
+        [self sendEventWithName:@"onPresent" body:nil];
+    }
     [rootViewController presentViewController:self.storeProductView animated:animated completion:^() {
+        if (self.hasListeners) {
+            [self sendEventWithName:@"onPresented" body:nil];
+        }
         if (callback != nil) {
             callback(@[[NSNull null]]);
         }
@@ -71,7 +84,11 @@ RCT_EXPORT_METHOD(dismiss)
 
 -(void)productViewControllerDidFinish:(nonnull SKStoreProductViewController *)controller
 {
-    [controller dismissViewControllerAnimated:true completion:nil];
+    [controller dismissViewControllerAnimated:true completion:^{
+        if (self.hasListeners) {
+            [self sendEventWithName:@"onDismissed" body:nil];
+        }
+    }];
     NSLog(@"[RJHStoreViewManager] SKStoreProductViewController dismissed.");
 
     if (self.hasListeners) {
@@ -118,7 +135,13 @@ RCT_EXPORT_METHOD(dismiss)
 }
 
 -(NSArray<NSString *> *)supportedEvents {
-    return @[@"onDismiss"];
+    return @[@"onBeginLoad",
+             @"onLoaded",
+             @"onPresent",
+             @"onPresented",
+             @"onDismiss",
+             @"onDismissed"
+    ];
 }
 
 @end
