@@ -1,8 +1,8 @@
 PODS:
-  - React (0.19.0):
-    - React/Core (= 0.19.0)
-  - React/Core (0.19.0)
-  - ReactNativeStoreView (0.1.0):
+  - React (0.30.0):
+    - React/Core (= 0.30.0)
+  - React/Core (0.30.0)
+  - ReactNativeStoreView (0.1.3):
     - React
 
 DEPENDENCIES:
@@ -11,12 +11,14 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   React:
-    :path: ../node_modules/react-native
+    :path: "../node_modules/react-native"
   ReactNativeStoreView:
-    :path: ../node_modules/react-native-store-view
+    :path: "../node_modules/react-native-store-view"
 
 SPEC CHECKSUMS:
-  React: 788590e9bb1784fac953ded1b325f16d9e817090
-  ReactNativeStoreView: a424b91571e9db63f158396310a4e35de4a6c5f1
+  React: ed499ad8bb72560821a80fefa59e15a18f3ec75c
+  ReactNativeStoreView: 34a1f730cdc91744885c434d3092288bcfe0b3e6
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 9e7c75a2064f676ab27aa19b3ae7db8d36d4428a
+
+COCOAPODS: 1.0.1

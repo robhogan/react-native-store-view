@@ -19,24 +19,24 @@ export type LoadProductParameters = {
 }
 
 export default class StoreViewManager {
-  static loadProductWithParameters(params: LoadProductParameters): Promise {
+  static loadProductWithParameters(params: LoadProductParameters): Promise<void> {
     return new Promise((resolve, reject) => {
-      NativeStoreViewManager.loadProductWithParameters(params, (err, result) => {
+      NativeStoreViewManager.loadProductWithParameters(params, err => {
         if (err) {
           return reject(err);
         }
-        resolve(result);
+        resolve();
       });
     });
   }
 
-  static presentViewController(animated = true): Promise {
+  static presentViewController(animated = true): Promise<void> {
     return new Promise((resolve, reject) => {
-      NativeStoreViewManager.presentViewController(animated, (err, result) => {
+      NativeStoreViewManager.presentViewController(animated, err => {
         if (err) {
           return reject(err);
         }
-        resolve(result);
+        resolve();
       });
     });
   }

@@ -4,7 +4,7 @@
   "description": "Wraps SKStoreProductViewController for use in react-native projects",
   "main": "index.ios.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "flow"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,9 @@
     "url": "https://github.com/rh389/react-native-store-view/issues"
   },
   "devDependencies": {
-    "react-native": "~0.20"
+    "flow-bin": "0.27.0",
+    "react": "~15.2.0",
+    "react-native": "^0.30.0"
   },
   "homepage": "https://github.com/rh389/react-native-store-view#readme"
 }

@@ -22,7 +22,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		BF1B462625CB4BA0CF161AA1 /* libPods-ReactNativeStoreViewExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F7A32228F9C76197CE9861 /* libPods-ReactNativeStoreViewExample.a */; };
+		89CE03125BD132E10F2B58A9 /* libPods-ReactNativeStoreViewExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E7CC788EE71D3A92F0D1 /* libPods-ReactNativeStoreViewExample.a */; };
+		905B35B026EE5FB51A4ABDE5 /* libPods-ReactNativeStoreViewExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7ADC4680B4BA429094F4E0 /* libPods-ReactNativeStoreViewExampleTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,11 +126,14 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactNativeStoreViewExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactNativeStoreViewExample/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		3F8801B875B30C2BE781F2AE /* Pods-ReactNativeStoreViewExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeStoreViewExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeStoreViewExampleTests/Pods-ReactNativeStoreViewExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7693E7CC788EE71D3A92F0D1 /* libPods-ReactNativeStoreViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeStoreViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		7C8517F282EED73EC42BC14D /* Pods-ReactNativeStoreViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeStoreViewExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeStoreViewExample/Pods-ReactNativeStoreViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		A249CA3E5EC5A47DBADBBEDA /* Pods-ReactNativeStoreViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeStoreViewExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeStoreViewExample/Pods-ReactNativeStoreViewExample.debug.xcconfig"; sourceTree = "<group>"; };
-		A7F7A32228F9C76197CE9861 /* libPods-ReactNativeStoreViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeStoreViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E7ADC4680B4BA429094F4E0 /* libPods-ReactNativeStoreViewExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeStoreViewExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3E92987C73AD2B6A8757277 /* Pods-ReactNativeStoreViewExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeStoreViewExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeStoreViewExampleTests/Pods-ReactNativeStoreViewExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		AB437B7E0E58140FA805BA2A /* Pods-ReactNativeStoreViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeStoreViewExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeStoreViewExample/Pods-ReactNativeStoreViewExample.debug.xcconfig"; sourceTree = "<group>"; };
+		AE23A0F0CABA062BAE597E37 /* Pods-ReactNativeStoreViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeStoreViewExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactNativeStoreViewExample/Pods-ReactNativeStoreViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		D4B2BDFC1C73914A006C2957 /* libReactNativeStoreView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReactNativeStoreView.a; path = "Pods/../build/Debug-iphoneos/libReactNativeStoreView.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				905B35B026EE5FB51A4ABDE5 /* libPods-ReactNativeStoreViewExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +160,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				BF1B462625CB4BA0CF161AA1 /* libPods-ReactNativeStoreViewExample.a in Frameworks */,
+				89CE03125BD132E10F2B58A9 /* libPods-ReactNativeStoreViewExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				D4B2BDFC1C73914A006C2957 /* libReactNativeStoreView.a */,
-				A7F7A32228F9C76197CE9861 /* libPods-ReactNativeStoreViewExample.a */,
+				7693E7CC788EE71D3A92F0D1 /* libPods-ReactNativeStoreViewExample.a */,
+				9E7ADC4680B4BA429094F4E0 /* libPods-ReactNativeStoreViewExampleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,15 +272,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1E7DAEF302B7532D140DA5E7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A249CA3E5EC5A47DBADBBEDA /* Pods-ReactNativeStoreViewExample.debug.xcconfig */,
-				7C8517F282EED73EC42BC14D /* Pods-ReactNativeStoreViewExample.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,8 +312,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ReactNativeStoreViewExampleTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
-				1E7DAEF302B7532D140DA5E7 /* Pods */,
 				01763586A0493AC7BC3A5068 /* Frameworks */,
+				F775DDEADA5AA55894DE5426 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -331,6 +328,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F775DDEADA5AA55894DE5426 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB437B7E0E58140FA805BA2A /* Pods-ReactNativeStoreViewExample.debug.xcconfig */,
+				AE23A0F0CABA062BAE597E37 /* Pods-ReactNativeStoreViewExample.release.xcconfig */,
+				3F8801B875B30C2BE781F2AE /* Pods-ReactNativeStoreViewExampleTests.debug.xcconfig */,
+				A3E92987C73AD2B6A8757277 /* Pods-ReactNativeStoreViewExampleTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,9 +346,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ReactNativeStoreViewExampleTests" */;
 			buildPhases = (
+				5D974AFF32E3C852AD30C2B0 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				E4EF6441F662F7809D716873 /* [CP] Embed Pods Frameworks */,
+				6D363EE7484296E99C314C33 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -356,13 +367,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ReactNativeStoreViewExample" */;
 			buildPhases = (
-				18E1686AB88FA45B52B6D0BC /* Check Pods Manifest.lock */,
+				D6A03D9C61F5C3C266BDC500 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				F154A143A3AB23191B6BA2AE /* Embed Pods Frameworks */,
-				F04AD57B3F75BFA5965A0A2F /* Copy Pods Resources */,
+				FBA3E4674FB8E3D6DC0722C3 /* [CP] Embed Pods Frameworks */,
+				8BDB51A7CBF8811CD70CA597 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -556,14 +567,14 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n./react-native-xcode.sh";
 		};
-		18E1686AB88FA45B52B6D0BC /* Check Pods Manifest.lock */ = {
+		5D974AFF32E3C852AD30C2B0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,14 +582,29 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F04AD57B3F75BFA5965A0A2F /* Copy Pods Resources */ = {
+		6D363EE7484296E99C314C33 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeStoreViewExampleTests/Pods-ReactNativeStoreViewExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BDB51A7CBF8811CD70CA597 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,14 +612,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeStoreViewExample/Pods-ReactNativeStoreViewExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F154A143A3AB23191B6BA2AE /* Embed Pods Frameworks */ = {
+		D6A03D9C61F5C3C266BDC500 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E4EF6441F662F7809D716873 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeStoreViewExampleTests/Pods-ReactNativeStoreViewExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBA3E4674FB8E3D6DC0722C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,6 +702,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F8801B875B30C2BE781F2AE /* Pods-ReactNativeStoreViewExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -666,6 +723,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3E92987C73AD2B6A8757277 /* Pods-ReactNativeStoreViewExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -683,7 +741,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A249CA3E5EC5A47DBADBBEDA /* Pods-ReactNativeStoreViewExample.debug.xcconfig */;
+			baseConfigurationReference = AB437B7E0E58140FA805BA2A /* Pods-ReactNativeStoreViewExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = NO;
@@ -705,7 +763,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C8517F282EED73EC42BC14D /* Pods-ReactNativeStoreViewExample.release.xcconfig */;
+			baseConfigurationReference = AE23A0F0CABA062BAE597E37 /* Pods-ReactNativeStoreViewExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				HEADER_SEARCH_PATHS = (

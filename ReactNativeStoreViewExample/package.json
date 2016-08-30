@@ -6,8 +6,9 @@
     "start": "react-native start"
   },
   "dependencies": {
-    "react-native": "^0.20.0",
-    "react-native-store-view": "github:rh389/react-native-store-view"
+    "react": "~15.2.0",
+    "react-native": "^0.30.0",
+    "react-native-store-view": ".."
   },
   "description": "An example project for react-native-store-view",
   "main": "index.ios.js",
