@@ -30,7 +30,7 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
     self.storeProductView.delegate = self;
 
     if (self.hasListeners) {
-        [self sendEventWithName:@"onBeginLoad" body:nil];
+        [self sendEventWithName:@"onLoading" body:nil];
     }
 
     [self.storeProductView loadProductWithParameters: nativeParams completionBlock:^(BOOL result, NSError *error) {
@@ -53,7 +53,7 @@ RCT_EXPORT_METHOD(presentViewController: (BOOL)animated callback: (RCTResponseSe
 {
     UIViewController *rootViewController = RCTPresentedViewController();
     if (self.hasListeners) {
-        [self sendEventWithName:@"onPresent" body:nil];
+        [self sendEventWithName:@"onPresenting" body:nil];
     }
     [rootViewController presentViewController:self.storeProductView animated:animated completion:^() {
         if (self.hasListeners) {
@@ -92,7 +92,7 @@ RCT_EXPORT_METHOD(dismiss)
     NSLog(@"[RJHStoreViewManager] SKStoreProductViewController dismissed.");
 
     if (self.hasListeners) {
-        [self sendEventWithName:@"onDismiss" body:nil];
+        [self sendEventWithName:@"onDismissing" body:nil];
     }
 }
 
@@ -135,11 +135,11 @@ RCT_EXPORT_METHOD(dismiss)
 }
 
 -(NSArray<NSString *> *)supportedEvents {
-    return @[@"onBeginLoad",
+    return @[@"onLoading",
              @"onLoaded",
-             @"onPresent",
+             @"onPresenting",
              @"onPresented",
-             @"onDismiss",
+             @"onDismissing",
              @"onDismissed"
     ];
 }

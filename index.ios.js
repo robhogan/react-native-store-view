@@ -15,7 +15,7 @@ export type LoadProductParameters = {
   providerToken?: string
 };
 
-export type StoreViewEventName = 'onBeginLoad' | 'onLoaded' | 'onPresent' | 'onPresented' | 'onDismiss' | 'onDismissed';
+export type StoreViewEventName = 'onLoading' | 'onLoaded' | 'onPresenting' | 'onPresented' | 'onDismissing' | 'onDismissed';
 
 export default class StoreViewManager {
   static loadProductWithParameters(params: LoadProductParameters): Promise<void> {
