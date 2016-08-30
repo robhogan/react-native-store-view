@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D4F2B8021D75AAE300A2DB9D /* RJHStoreViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F2B8011D75AAE300A2DB9D /* RJHStoreViewManager.m */; };
-		D4F2B81B1D75AD1B00A2DB9D /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F2B81A1D75ACFD00A2DB9D /* libReact.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +44,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4F2B81B1D75AD1B00A2DB9D /* libReact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +258,10 @@
 		D4F2B7FD1D75AA3500A2DB9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/node_modules/react-native/React/**";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../react-native/React/**",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -270,7 +271,10 @@
 		D4F2B7FE1D75AA3500A2DB9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/node_modules/react-native/React/**";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../react-native/React/**",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
