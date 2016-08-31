@@ -8,7 +8,6 @@ osx_image: xcode7.3
 
 cache:
   directories:
-    - node_modules
     - .nvm
 
 install:
@@ -19,7 +18,6 @@ install:
   - nvm install 5
   - nvm use 5
   - npm config set spin=false
-  - npm install -g flow-bin@`node -p "require('fs').readFileSync('.flowconfig', 'utf8').split('[version]')[1].trim()"`
   - cd ReactNativeStoreViewExample && npm install
   - cd ios && pod install --no-repo-update
 
