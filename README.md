@@ -4,20 +4,18 @@ Wraps SKStoreProductViewController to open items in the App Store from within re
 
 [![CI Status](https://travis-ci.org/rh389/react-native-store-view.svg?branch=master)](https://travis-ci.org/rh389/react-native-store-view)
 
-![Demo gif](https://github.com/rh389/react-native-store-view/blob/master/demo.gif)
+![Demo gif](https://i.imgur.com/BlFbKmx.gif)
 
 ## Installation
 
-Fetch the package using npm:
+### With link
+1. `npm install --save react-native-store-view`
+2. `react-native link`
 
-```
-npm install --save react-native-store-view
-```
-
-Then add `pod 'ReactNativeStoreView', :path => '../node_modules/react-native-store-view'` to your project's `Podfile`,
-modifying the path as necessary.
-
-Finally, run `pod install` from the command line to link the pod to your xcode project.
+### With CocoaPods
+1. `npm install --save react-native-store-view`
+2. Add `pod 'ReactNativeStoreView', :path => '../node_modules/react-native-store-view'` to your project's `Podfile`, modifying the path as necessary.
+3. `pod install`
 
 ## API
 
@@ -51,11 +49,11 @@ Calls the callback at most once on the next occurrence of the event. Cleans up a
 ## Events
 
 The module fires events:
- - `onLoading` - Begun loading a product in the background
- - `onLoaded` - Product loaded and ready to present
- - `onPresenting` - `present` has been called
- - `onPresented` - `present` has finished animating and the store is now in the foreground.
- - `onDismissing` - Either `dismiss` has been called or the user has pressed `Done` 
+ - `onLoading` - Begun loading a product in the background.
+ - `onLoaded` - Product loaded and ready to present.
+ - `onPresenting` - `presentViewController` has been called.
+ - `onPresented` - `presentViewController` has finished animating and the store is now in the foreground.
+ - `onDismissing` - Either `dismiss` has been called or the user has pressed `Done`.
  - `onDismissed` - `dismiss` has finished animating and the store is gone from view.
 
 ## Example usage
