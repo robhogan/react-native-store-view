@@ -2,7 +2,7 @@
 
 Wraps SKStoreProductViewController to open items in the App Store from within react-native projects.
 
-[![CI Status](https://travis-ci.org/rh389/react-native-store-view.svg?branch=master)](https://travis-ci.org/rh389/react-native-store-view)
+[![CI Status](https://travis-ci.org/rh389/react-native-store-view.svg?branch=master)](https://travis-ci.org/rh389/react-native-store-view) [![npm version](https://badge.fury.io/js/react-native-store-view.svg)](https://badge.fury.io/js/react-native-store-view)
 
 ![Demo gif](https://i.imgur.com/BlFbKmx.gif)
 
