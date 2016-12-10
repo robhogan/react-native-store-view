@@ -3,12 +3,14 @@
   "version": "0.0.0-master",
   "private": true,
   "scripts": {
-    "start": "react-native start"
+    "preinstall": "mkdir -p tmp/react-native-store-view && cp -r ../ios ../index.* ../package.json ../RJHStoreViewManager.xcodeproj ../ReactNativeStoreView.podspec tmp/react-native-store-view",
+    "start": "react-native start",
+    "postinstall": "rm -rf tmp"
   },
   "dependencies": {
     "react": "~15.4.0",
     "react-native": "^0.39.1",
-    "react-native-store-view": "file:.."
+    "react-native-store-view": "file:tmp/react-native-store-view"
   },
   "description": "An example project for react-native-store-view",
   "main": "index.ios.js",
