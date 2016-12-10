@@ -8,10 +8,11 @@ osx_image: xcode8.1
 
 cache:
   directories:
-    - .nvm
+    - /Users/travis/Library/Caches/Yarn
 
 install:
   - brew install yarn
+  - yarn cache dir
   - cd ReactNativeStoreViewExample && yarn install
   - cd ios && pod install --no-repo-update
 
