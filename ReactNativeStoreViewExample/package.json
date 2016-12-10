@@ -6,8 +6,8 @@
     "start": "react-native start"
   },
   "dependencies": {
-    "react": "~15.2.0",
-    "react-native": "^0.30.0",
+    "react": "~15.4.0",
+    "react-native": "^0.39.1",
     "react-native-store-view": ".."
   },
   "description": "An example project for react-native-store-view",
