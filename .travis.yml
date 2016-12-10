@@ -9,8 +9,9 @@ osx_image: xcode8.1
 install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash && source ~/.bashrc
   - yarn cache clean
-  - cd ReactNativeStoreViewExample && yarn install
-  - cd ios && pod install --no-repo-update
+  - cd ReactNativeStoreViewExample && ls -al . && rm -rf node_modules && yarn install
+  - cd ios && ls -al . rm -rf Pods Podfile.lock && pod install --no-repo-update
+  - ls -al /Users/travis/Library/Developer/Xcode/DerivedData && rm -rf /Users/travis/Library/Developer/Xcode/DerivedData
 
 script:
   - set -o pipefail && xcodebuild test -workspace ReactNativeStoreViewExample.xcworkspace -scheme ReactNativeStoreViewExample -destination 'platform=iOS Simulator,name=iPhone 6' -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES | xcpretty
