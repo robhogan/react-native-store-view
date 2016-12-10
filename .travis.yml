@@ -6,13 +6,9 @@ language: objective-c
 
 osx_image: xcode8.1
 
-cache:
-  directories:
-    - /Users/travis/Library/Caches/Yarn
-
 install:
-  - brew install yarn
-  - yarn cache dir
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - yarn cache clean
   - cd ReactNativeStoreViewExample && yarn install
   - cd ios && pod install --no-repo-update
 
