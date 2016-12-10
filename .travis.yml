@@ -4,21 +4,12 @@
 
 language: objective-c
 
-osx_image: xcode7.3
-
-cache:
-  directories:
-    - .nvm
+osx_image: xcode8.1
 
 install:
-  - brew reinstall nvm
-  - mkdir -p .nvm
-  - export NVM_DIR="$PWD/.nvm"
-  - source $(brew --prefix nvm)/nvm.sh
-  - nvm install 5
-  - nvm use 5
-  - npm config set spin=false
-  - cd ReactNativeStoreViewExample && npm install
+  - curl -o- -L https://yarnpkg.com/install.sh | bash && source ~/.bashrc
+  - yarn cache clean
+  - cd ReactNativeStoreViewExample && yarn install
   - cd ios && pod install --no-repo-update
 
 script:
