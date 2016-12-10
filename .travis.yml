@@ -11,14 +11,8 @@ cache:
     - .nvm
 
 install:
-  - brew reinstall nvm
-  - mkdir -p .nvm
-  - export NVM_DIR="$PWD/.nvm"
-  - source $(brew --prefix nvm)/nvm.sh
-  - nvm install 5
-  - nvm use 5
-  - npm config set spin=false
-  - cd ReactNativeStoreViewExample && npm install
+  - brew install yarn
+  - cd ReactNativeStoreViewExample && yarn install
   - cd ios && pod install --no-repo-update
 
 script:
