@@ -11,6 +11,7 @@ install:
   - yarn cache clean
   - cd ReactNativeStoreViewExample && yarn install
   - cd ios && pod install --no-repo-update
+  - rm -rf /Users/travis/Library/Developer/Xcode/DerivedData
 
 script:
   - set -o pipefail && xcodebuild test -workspace ReactNativeStoreViewExample.xcworkspace -scheme ReactNativeStoreViewExample -destination 'platform=iOS Simulator,name=iPhone 6' -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES | xcpretty
