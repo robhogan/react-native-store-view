@@ -10,7 +10,7 @@ install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash && source ~/.bashrc
   - yarn cache clean
   - cd ReactNativeStoreViewExample && ls -al . && rm -rf node_modules && yarn install
-  - cd ios && ls -al . rm -rf Pods Podfile.lock && pod install --no-repo-update
+  - cd ios && ls -al . && rm -rf Pods Podfile.lock && pod install --no-repo-update
   - ls -al /Users/travis/Library/Developer/Xcode/DerivedData && rm -rf /Users/travis/Library/Developer/Xcode/DerivedData
 
 script:
