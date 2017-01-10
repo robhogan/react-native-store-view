@@ -1,6 +1,6 @@
 {
   "name": "react-native-store-view",
-  "version": "1.0.1",
+  "version": "2.0.0-rc.0",
   "description": "Wraps SKStoreProductViewController to open items in the App Store from within react-native projects.",
   "main": "index.ios.js",
   "scripts": {
@@ -21,9 +21,9 @@
     "url": "https://github.com/rh389/react-native-store-view/issues"
   },
   "devDependencies": {
-    "flow-bin": "0.27.0",
-    "react": "~15.2.0",
-    "react-native": "^0.30.0"
+    "flow-bin": "0.36",
+    "react": "~15.4.1",
+    "react-native": "^0.40.0"
   },
   "homepage": "https://github.com/rh389/react-native-store-view#readme"
 }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "ReactNativeStoreView"
-  s.version          = "1.0.1"
+  s.version          = "2.0.0-rc.0"
   s.summary          = "A React Native wrapper for SKStoreProductView."
   s.description      = "A React Native wrapper for SKStoreProductView, for iOS App Store interaction from RN apps."
   s.homepage         = "https://github.com/rh389/react-native-store-view.git"

@@ -6,6 +6,8 @@ Wraps SKStoreProductViewController to open items in the App Store from within re
 
 ![Demo gif](https://i.imgur.com/BlFbKmx.gif)
 
+**NB: v2 Requires React Native v0.40 or above. Use v1 for React Native <= 0.39**
+
 ## Installation
 
 ### With link
