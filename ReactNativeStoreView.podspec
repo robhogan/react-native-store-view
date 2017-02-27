@@ -1,17 +1,13 @@
-#
-# Be sure to run `pod lib lint ReactNativeStoreView.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
+require "json"
+
+package = JSON.parse(File.read(File.join(__dir__, "package.json")))
 
 Pod::Spec.new do |s|
   s.name             = "ReactNativeStoreView"
-  s.version          = "2.0.0-rc.0"
+  s.version          = package["version"]
   s.summary          = "A React Native wrapper for SKStoreProductView."
-  s.description      = "A React Native wrapper for SKStoreProductView, for iOS App Store interaction from RN apps."
-  s.homepage         = "https://github.com/rh389/react-native-store-view.git"
+  s.description      = package["description"]
+  s.homepage         = package["homepage"]
   s.license          = 'MIT'
   s.author           = { "Rob Hogan" => "roberthogan@blueyonder.co.uk" }
   s.source           = { :git => "https://github.com/rh389/react-native-store-view.git", :tag => s.version.to_s }
