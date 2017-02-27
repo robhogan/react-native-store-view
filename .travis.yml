@@ -6,6 +6,9 @@ language: objective-c
 
 osx_image: xcode8.1
 
+before_install:
+  - gem install cocoapods -v '1.2.0'
+
 install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash && source ~/.bashrc
   - yarn cache clean
