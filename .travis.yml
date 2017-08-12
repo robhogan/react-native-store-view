@@ -6,10 +6,6 @@ language: objective-c
 
 osx_image: xcode8.3
 
-before_install:
-  - pod --version
-  - gem install cocoapods -v '1.2.0'
-
 install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash && source ~/.bashrc
   - yarn cache clean
@@ -18,4 +14,4 @@ install:
   - rm -rf ~/Library/Developer/Xcode/DerivedData ~/Library/Caches/com.apple.dt.Xcode
 
 script:
-  - xcodebuild test -workspace ReactNativeStoreViewExample.xcworkspace -scheme ReactNativeStoreViewExample -configuration Release -destination 'platform=iOS Simulator,name=iPhone 6' -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES CODE_SIGNING_REQUIRED=NO
+  - xcodebuild test -workspace ReactNativeStoreViewExample.xcworkspace -scheme ReactNativeStoreViewExample -destination 'platform=iOS Simulator,name=iPhone 6' -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES CODE_SIGNING_REQUIRED=NO

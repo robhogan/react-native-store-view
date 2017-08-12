@@ -176,6 +176,7 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ReactNativeStoreViewExample" */;
 			buildPhases = (
 				B3815D768F236569D8423A36 /* [CP] Check Pods Manifest.lock */,
+				D4142AEC1F3F87A400FFB41E /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
@@ -338,6 +339,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactNativeStoreViewExample/Pods-ReactNativeStoreViewExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D4142AEC1F3F87A400FFB41E /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n    if nc -w 5 -z localhost 8081 ; then\n        if ! curl -s \"http://localhost:8081/status\" | grep -q \"packager-status:running\" ; then\n            echo \"Port 8081 already in use, packager is either not running or not running correctly\"\n            exit 2\n        fi\n    else\n        open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n    fi\nfi";
 		};
 		F7A53364D834F2EC5ACDED82 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
