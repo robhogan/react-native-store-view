@@ -21,9 +21,9 @@
     "url": "https://github.com/rh389/react-native-store-view/issues"
   },
   "devDependencies": {
-    "flow-bin": "0.36",
-    "react": "~15.4.1",
-    "react-native": "^0.40.0"
+    "flow-bin": "0.49.1",
+    "react": "~16.0.0-alpha.12",
+    "react-native": "^0.47.1"
   },
   "homepage": "https://github.com/rh389/react-native-store-view#readme"
 }

@@ -1,20 +1,23 @@
 {
-  "name": "react-native-store-view-example",
+  "name": "ReactNativeStoreViewExample",
   "version": "0.0.0-master",
   "private": true,
   "scripts": {
     "preinstall": "mkdir -p tmp/react-native-store-view && cp -r ../ios ../index.* ../package.json ../RJHStoreViewManager.xcodeproj ../ReactNativeStoreView.podspec tmp/react-native-store-view",
     "start": "react-native start",
-    "postinstall": "rm -rf tmp"
+    "postinstall": "rm -rf tmp",
+    "flow": "flow"
   },
   "dependencies": {
-    "react": "~15.4.1",
-    "react-native": "~0.42.0-rc.3",
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.47.1",
     "react-native-store-view": "file:tmp/react-native-store-view"
   },
   "description": "An example project for react-native-store-view",
   "main": "index.ios.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "flow-bin": "0.49.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rh389/react-native-store-view.git"
