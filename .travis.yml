@@ -18,4 +18,4 @@ install:
   - rm -rf ~/Library/Developer/Xcode/DerivedData ~/Library/Caches/com.apple.dt.Xcode
 
 script:
-  - xcodebuild test -workspace ReactNativeStoreViewExample.xcworkspace -scheme ReactNativeStoreViewExample -destination 'platform=iOS Simulator,name=iPhone 6' -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES CODE_SIGNING_REQUIRED=NO
+  - xcodebuild test -workspace ReactNativeStoreViewExample.xcworkspace -scheme ReactNativeStoreViewExample -configuration Release -destination 'platform=iOS Simulator,name=iPhone 6' -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES CODE_SIGNING_REQUIRED=NO
