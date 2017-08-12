@@ -16,7 +16,7 @@
   "description": "An example project for react-native-store-view",
   "main": "index.ios.js",
   "devDependencies": {
-    "flow-bin": "0.49.0"
+    "flow-bin": "0.49.1"
   },
   "repository": {
     "type": "git",
