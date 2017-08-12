@@ -6,7 +6,7 @@ language: objective-c
 
 osx_image: xcode8.3
 
-before_install:i
+before_install:
   - pod --version
   - gem install cocoapods -v '1.2.0'
 
