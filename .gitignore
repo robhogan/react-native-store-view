@@ -25,6 +25,7 @@ RJHStoreViewManager.xcodeproj/project.xcworkspace
 
 node_modules
 .idea
+yarn.lock
 
 Carthage
 # We recommend against adding the Pods directory to your .gitignore. However
