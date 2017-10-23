@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ActivityIndicator, AppRegistry, ScrollView, StyleSheet, Text, View, TouchableHighlight } from "react-native";
-import StoreViewManager from "react-native-store-view";
+import * as StoreViewManager from "react-native-store-view";
 
 type State = {
   loading: boolean;
@@ -18,7 +18,7 @@ class ReactNativeStoreViewExample extends Component<void, void, State> {
   listeners: {[key: string]: Function} = {};
 
   componentDidMount() {
-    ['onLoading', 'onLoaded', 'onPresenting', 'onPresented', 'onDismissing', 'onDismissed'].forEach(eventName => {
+    ['loading', 'loaded', 'presenting', 'presented', 'dismissing', 'dismissed'].forEach(eventName => {
       this.listeners[eventName] = () => this.log(eventName);
     });
     Object.keys(this.listeners).forEach(event => StoreViewManager.addListener(event, this.listeners[event]));

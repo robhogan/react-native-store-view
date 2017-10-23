@@ -34,7 +34,7 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
     self.storeProductView = [[SKStoreProductViewController alloc] init];
     self.storeProductView.delegate = self;
 
-    [self sendEventWithNameIfListening:@"onLoading" body:nil];
+    [self sendEventWithNameIfListening:@"RJHStoreViewManagerLoading" body:nil];
 
     [self.storeProductView loadProductWithParameters: nativeParams completionBlock:^(BOOL result, NSError *error) {
         if (!result) {
@@ -44,7 +44,7 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
                 callback(@[RCTMakeError(@"Unknown error loading product.", nil, args)]);
             }
         } else {
-            [self sendEventWithNameIfListening:@"onLoaded" body:nil];
+            [self sendEventWithNameIfListening:@"RJHStoreViewManagerLoaded" body:nil];
             callback(@[[NSNull null]]);
         }
     }];
@@ -53,9 +53,9 @@ RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTR
 RCT_EXPORT_METHOD(presentViewController: (BOOL)animated callback: (RCTResponseSenderBlock)callback)
 {
     UIViewController *rootViewController = RCTPresentedViewController();
-    [self sendEventWithNameIfListening:@"onPresenting" body:nil];
+    [self sendEventWithNameIfListening:@"RJHStoreViewManagerPresenting" body:nil];
     [rootViewController presentViewController:self.storeProductView animated:animated completion:^() {
-        [self sendEventWithNameIfListening:@"onPresented" body:nil];
+        [self sendEventWithNameIfListening:@"RJHStoreViewManagerPresented" body:nil];
         if (callback != nil) {
             callback(@[[NSNull null]]);
         }
@@ -82,24 +82,24 @@ RCT_EXPORT_METHOD(isAvailable:(nonnull RCTResponseSenderBlock)callback)
 RCT_EXPORT_METHOD(dismiss: (BOOL)animated callback: (RCTResponseSenderBlock)callback)
 {
     [self.storeProductView dismissViewControllerAnimated:animated completion:^{
-        [self sendEventWithNameIfListening:@"onDismissed" body:@{@"dismissedByUser": @NO}];
+        [self sendEventWithNameIfListening:@"RJHStoreViewManagerDismissed" body:@{@"dismissedByUser": @NO}];
         if (callback != nil) {
             callback(@[[NSNull null]]);
         }
     }];
 
     if (self.hasListeners) {
-        [self sendEventWithNameIfListening:@"onDismissing" body:@{@"dismissedByUser": @NO}];
+        [self sendEventWithNameIfListening:@"RJHStoreViewManagerDismissing" body:@{@"dismissedByUser": @NO}];
     }
 }
 
 -(void)productViewControllerDidFinish:(nonnull SKStoreProductViewController *)controller
 {
     [controller dismissViewControllerAnimated:true completion:^{
-        [self sendEventWithNameIfListening:@"onDismissed" body:@{@"dismissedByUser": @YES}];
+        [self sendEventWithNameIfListening:@"RJHStoreViewManagerDismissed" body:@{@"dismissedByUser": @YES}];
     }];
 
-    [self sendEventWithNameIfListening:@"onDismissing" body:@{@"dismissedByUser": @YES}];
+    [self sendEventWithNameIfListening:@"RJHStoreViewManagerDismissing" body:@{@"dismissedByUser": @YES}];
 }
 
 -(NSDictionary *)transformAndValidateLoadProductParamaters:(nonnull NSDictionary *)args error:(NSError **)errorPtr
@@ -141,12 +141,12 @@ RCT_EXPORT_METHOD(dismiss: (BOOL)animated callback: (RCTResponseSenderBlock)call
 }
 
 -(NSArray<NSString *> *)supportedEvents {
-    return @[@"onLoading",
-             @"onLoaded",
-             @"onPresenting",
-             @"onPresented",
-             @"onDismissing",
-             @"onDismissed"
+    return @[@"RJHStoreViewManagerLoading",
+             @"RJHStoreViewManagerLoaded",
+             @"RJHStoreViewManagerPresenting",
+             @"RJHStoreViewManagerPresented",
+             @"RJHStoreViewManagerDismissing",
+             @"RJHStoreViewManagerDismissed"
              ];
 }
 

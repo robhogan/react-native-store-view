@@ -1,2 +1,6 @@
 ReactNativeStoreViewExample/
 demo.gif
+.editorconfig
+.travis.yml
+.gitignore
+.gitattributes

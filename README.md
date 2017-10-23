@@ -6,7 +6,7 @@ Wraps SKStoreProductViewController to open items in the App Store from within re
 
 ![Demo gif](https://i.imgur.com/BlFbKmx.gif)
 
-**NB: v2 Requires React Native v0.40 or above. Use v1 for React Native <= 0.39**
+**NB: v2 and v3 require React Native v0.40 or above. Use v1 for React Native <= 0.39**
 
 ## Installation
 
@@ -46,34 +46,37 @@ Add a listener for the given event (see below).
 Removes the specified listener for the specified event. Be sure to pass the same function reference as passed to addListener.
 
 ### once(eventName:string, callback:(payload: any) => any)
-Calls the callback at most once on the next occurrence of the event. Cleans up after itself if the event fires.
+Calls the callback at most once on the next occurrence of the event. Removes the listener if the event fires.
 
 ## Events
 
 The module fires events:
- - `onLoading` - Begun loading a product in the background.
- - `onLoaded` - Product loaded and ready to present.
- - `onPresenting` - `presentViewController` has been called.
- - `onPresented` - `presentViewController` has finished animating and the store is now in the foreground.
- - `onDismissing` - Either `dismiss` has been called or the user has pressed `Done`.
- - `onDismissed` - `dismiss` has finished animating and the store is gone from view.
+ - `loading` - Begun loading a product in the background.
+ - `loaded` - Product loaded and ready to present.
+ - `presenting` - `presentViewController` has been called.
+ - `presented` - `presentViewController` has finished animating and the store is now in the foreground.
+ - `dismissing` - Either `dismiss` has been called or the user has pressed `Done`.
+ - `dismissed` - `dismiss` has finished animating and the store is gone from view.
+
+(NB: If listening for events in native code or when importing the module directly from `NativeModules`, `loading` becomes `RJHStoreViewManagerLoading` etc to avoid conflicts with other modules sharing the global emitter.)
 
 ## Example usage
 
 ```js
 import React, {Component} from "react";
 import {Text, View, TouchableHighlight} from "react-native";
-import StoreViewManager from "react-native-store-view";
+import * as StoreViewManager from "react-native-store-view";
 
 class ReactNativeStoreViewExample extends Component {
 
-  componentDidMount() {
-    this.dismissListener = () => { console.log('Store view dismissed'); }
-    StoreViewManager.addListener('onDismiss', this.dismissListener);
+  dismissListener = () => console.log('Store view dismissed');
+
+  constructor() {
+    StoreViewManager.addListener('dismiss', this.dismissListener);
   }
   
   componentWillUnmount() {
-    StoreViewManager.removeListener('onDismiss', this.dismissListener);
+    StoreViewManager.removeListener('dismiss', this.dismissListener);
   }
 
   render() {
