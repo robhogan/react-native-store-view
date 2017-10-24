@@ -96,7 +96,7 @@ class ReactNativeStoreViewExample extends Component {
     StoreViewManager.loadProductWithParameters({
       iTunesItemIdentifier: 364709193 // The only mandatory parameter is a numeric App Store ID. This one is iBooks.
       //, affiliateToken: 'string, optional, iOS 8.0+'
-      //, campaignToken: 'string, optional, iOS 8.3+'
+      //, campaignToken: 'string, optional, iOS 8.0+'
       //, providerToken: 'string, optional, iOS 8.3+'
       //, advertisingPartnerToken: 'string, optional, iOS 9.3+'
     })
