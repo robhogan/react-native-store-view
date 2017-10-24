@@ -129,6 +129,10 @@ RCT_EXPORT_METHOD(dismiss: (BOOL)animated callback: (RCTResponseSenderBlock)call
         [nativeParams setObject: [args objectForKey:@"providerToken"] forKey: SKStoreProductParameterProviderToken];
     }
 
+    if ([args objectForKey:@"advertisingPartnerToken"] != nil && [[args objectForKey:@"advertisingPartnerToken"] isKindOfClass:[NSString class]]) {
+        [nativeParams setObject: [args objectForKey:@"advertisingPartnerToken"] forKey: SKStoreProductParameterAdvertisingPartnerToken];
+    }
+
     return nativeParams;
 }
 

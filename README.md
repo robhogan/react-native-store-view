@@ -27,12 +27,13 @@ Resolves with a boolean indicating whether SKStoreProductViewController is avail
 ### loadProductWithParameters(params):Promise<void>
 Load a product in the background, in preparation for displaying. Resolves when loading is complete, or rejects with an passed-through error if the underlying call fails.
 
-`params` is an object with up to four properties, corresponding to [SKStoreProductViewController's parameters](https://developer.apple.com/library/ios//documentation/StoreKit/Reference/SKITunesProductViewController_Ref/index.html#//apple_ref/doc/constant_group/Product_Dictionary_Keys)
+`params` is an object with up to four properties, corresponding to [SKStoreProductViewController's parameters](https://developer.apple.com/documentation/storekit/skstoreproductviewcontroller/product_dictionary_keys)
  - `iTunesItemIdentifier` (number, required)
- - `affiliateToken` (string, optional)
- - `campaignToken` (string, optional)
- - `providerToken` (string, optional)
- 
+ - `affiliateToken` (string, optional, iOS 8.0+)
+ - `campaignToken` (string, optional, iOS 8.0+)
+ - `providerToken` (string, optional, iOS 8.3+)
+ - `advertisingPartnerToken` (string, optional, iOS 9.3+)
+
 ### presentViewController(animated:boolean = true):Promise<void>
 Display the store view as a modal. Resolve when animation completes.
 
@@ -93,10 +94,11 @@ class ReactNativeStoreViewExample extends Component {
 
   onPressButton() {
     StoreViewManager.loadProductWithParameters({
-      iTunesItemIdentifier: 364709193 //The only mandatory parameter is a numeric App Store ID. This one is iBooks.
-      //, affiliateToken: 'string'
-      //, campaignToken: 'string'
-      //, providerToken: 'string'
+      iTunesItemIdentifier: 364709193 // The only mandatory parameter is a numeric App Store ID. This one is iBooks.
+      //, affiliateToken: 'string, optional, iOS 8.0+'
+      //, campaignToken: 'string, optional, iOS 8.3+'
+      //, providerToken: 'string, optional, iOS 8.3+'
+      //, advertisingPartnerToken: 'string, optional, iOS 9.3+'
     })
       .then(() => {
         console.log('SKStoreProductViewController successfully loaded the product over the net, but is not yet displaying anything');

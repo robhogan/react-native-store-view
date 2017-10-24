@@ -9,7 +9,8 @@ export type LoadProductParameters = {
   iTunesItemIdentifier: number,
   affiliateToken?: string,
   campaignToken?: string,
-  providerToken?: string
+  providerToken?: string,
+  advertisingPartnerToken?: string
 };
 
 export type StoreViewEventName =

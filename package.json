@@ -1,6 +1,6 @@
 {
   "name": "react-native-store-view",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Wraps SKStoreProductViewController to open items in the App Store from within react-native projects.",
   "main": "index.ios.js",
   "scripts": {
