@@ -27,7 +27,7 @@ function jsEventToNativeEvent(event: StoreViewEventName) {
   }
   if (event.substring(0,2) === 'on') {
     const badEvent = event;
-    event = event.substring(2).toLowerCase();
+    event = ((event.substring(2).toLowerCase(): any): StoreViewEventName);
     console.warn(`[react-native-store-view] Event names starting with 'on' ('${badEvent}') are deprecated. Listen for '${event}' instead`);
   }
   return 'RJHStoreViewManager' + event.charAt(0).toUpperCase() + event.substring(1);
@@ -44,7 +44,7 @@ export function loadProductWithParameters(params: LoadProductParameters): Promis
   });
 }
 
-export function presentViewController(animated = true): Promise<void> {
+export function presentViewController(animated: boolean = true): Promise<void> {
   return new Promise((resolve, reject) => {
     NativeStoreViewManager.presentViewController(animated, err => {
       if (err) {
