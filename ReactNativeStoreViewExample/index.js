@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ActivityIndicator, AppRegistry, ScrollView, StyleSheet, Text, View, TouchableHighlight } from "react-native";
+import { ActivityIndicator, AppRegistry, ScrollView, StyleSheet, Text, View, Button } from "react-native";
 import * as StoreViewManager from "react-native-store-view";
 
 type State = {
@@ -17,7 +17,8 @@ class ReactNativeStoreViewExample extends Component<void, void, State> {
 
   listeners: {[key: string]: Function} = {};
 
-  componentDidMount() {
+  constructor(props) {
+    super(props);
     ['loading', 'loaded', 'presenting', 'presented', 'dismissing', 'dismissed'].forEach(eventName => {
       this.listeners[eventName] = () => this.log(eventName);
     });
@@ -31,11 +32,7 @@ class ReactNativeStoreViewExample extends Component<void, void, State> {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={() => this.onPressButton()} style={styles.button} underlayColor="#EEE">
-          <Text style={styles.instructions}>
-            Tap here to open the app store
-          </Text>
-        </TouchableHighlight>
+        <Button onPress={() => this.onPressButton()} title="Tap here to open the App Store" />
 
         <ActivityIndicator
           animating={this.state.loading}
@@ -59,9 +56,9 @@ class ReactNativeStoreViewExample extends Component<void, void, State> {
         }
         return StoreViewManager.loadProductWithParameters({
           iTunesItemIdentifier: 364709193 //The only mandatory parameter is a numeric App Store ID. This one is iBooks.
-          //, affiliateToken: 'string'
-          //, campaignToken: 'string'
-          //, providerToken: 'string'
+          , affiliateToken: 'string'
+          , campaignToken: 'string'
+          , providerToken: 'string'
         })
       })
       .then(() => {
@@ -89,21 +86,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 50,
     backgroundColor: '#F5FCFF',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    fontSize: 15
-  },
-  button: {
-    marginTop: 50,
-    padding: 5,
-    borderWidth: 1,
-    borderColor: '#CCC',
-    borderRadius: 10,
-    height: 50,
-    width: 150
   },
   log: {
     borderTopWidth: 1,
