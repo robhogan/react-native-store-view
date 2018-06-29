@@ -14,7 +14,7 @@ RCT_EXPORT_MODULE();
 
 + (BOOL)requiresMainQueueSetup
 {
-  return NO;
+    return NO;
 }
 
 RCT_EXPORT_METHOD(loadProductWithParameters:(NSDictionary *)args callback: (RCTResponseSenderBlock)callback)
@@ -118,19 +118,35 @@ RCT_EXPORT_METHOD(dismiss: (BOOL)animated callback: (RCTResponseSenderBlock)call
     [nativeParams setObject: [args objectForKey:@"iTunesItemIdentifier"] forKey: SKStoreProductParameterITunesItemIdentifier];
 
     if ([args objectForKey:@"affiliateToken"] != nil && [[args objectForKey:@"affiliateToken"] isKindOfClass:[NSString class]]) {
-        [nativeParams setObject: [args objectForKey:@"affiliateToken"] forKey: SKStoreProductParameterAffiliateToken];
+        if (@available(iOS 8.0, *)) {
+            [nativeParams setObject: [args objectForKey:@"affiliateToken"] forKey: SKStoreProductParameterAffiliateToken];
+        } else {
+            RCTLogInfo(@"[ReactNativeStoreView] affiliateToken is not supported on iOS < 8.0. Ignoring");
+        }
     }
 
     if ([args objectForKey:@"campaignToken"] != nil && [[args objectForKey:@"campaignToken"] isKindOfClass:[NSString class]]) {
-        [nativeParams setObject: [args objectForKey:@"campaignToken"] forKey: SKStoreProductParameterCampaignToken];
+        if (@available(iOS 8.0, *)) {
+            [nativeParams setObject: [args objectForKey:@"campaignToken"] forKey: SKStoreProductParameterCampaignToken];
+        } else {
+            RCTLogInfo(@"[ReactNativeStoreView] campaignToken is not supported on iOS < 8.0. Ignoring");
+        }
     }
 
     if ([args objectForKey:@"providerToken"] != nil && [[args objectForKey:@"providerToken"] isKindOfClass:[NSString class]]) {
-        [nativeParams setObject: [args objectForKey:@"providerToken"] forKey: SKStoreProductParameterProviderToken];
+        if (@available(iOS 8.3, *)) {
+            [nativeParams setObject: [args objectForKey:@"providerToken"] forKey: SKStoreProductParameterProviderToken];
+        } else {
+            RCTLogInfo(@"[ReactNativeStoreView] providerToken is not supported on iOS < 8.3. Ignoring");
+        }
     }
 
     if ([args objectForKey:@"advertisingPartnerToken"] != nil && [[args objectForKey:@"advertisingPartnerToken"] isKindOfClass:[NSString class]]) {
-        [nativeParams setObject: [args objectForKey:@"advertisingPartnerToken"] forKey: SKStoreProductParameterAdvertisingPartnerToken];
+        if (@available(iOS 9.3, *)) {
+            [nativeParams setObject: [args objectForKey:@"advertisingPartnerToken"] forKey: SKStoreProductParameterAdvertisingPartnerToken];
+        } else {
+            RCTLogInfo(@"[ReactNativeStoreView] advertisingPartnerToken is not supported on iOS < 9.3. Ignoring");
+        }
     }
 
     return nativeParams;
