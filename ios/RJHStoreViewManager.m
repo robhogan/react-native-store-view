@@ -118,7 +118,7 @@ RCT_EXPORT_METHOD(dismiss: (BOOL)animated callback: (RCTResponseSenderBlock)call
     [nativeParams setObject: [args objectForKey:@"iTunesItemIdentifier"] forKey: SKStoreProductParameterITunesItemIdentifier];
 
     if ([args objectForKey:@"affiliateToken"] != nil && [[args objectForKey:@"affiliateToken"] isKindOfClass:[NSString class]]) {
-        if (@available(iOS 8.0, *)) {
+        if (&SKStoreProductParameterAffiliateToken != NULL) {
             [nativeParams setObject: [args objectForKey:@"affiliateToken"] forKey: SKStoreProductParameterAffiliateToken];
         } else {
             RCTLogInfo(@"[ReactNativeStoreView] affiliateToken is not supported on iOS < 8.0. Ignoring");
@@ -126,7 +126,7 @@ RCT_EXPORT_METHOD(dismiss: (BOOL)animated callback: (RCTResponseSenderBlock)call
     }
 
     if ([args objectForKey:@"campaignToken"] != nil && [[args objectForKey:@"campaignToken"] isKindOfClass:[NSString class]]) {
-        if (@available(iOS 8.0, *)) {
+        if (&SKStoreProductParameterCampaignToken != NULL) {
             [nativeParams setObject: [args objectForKey:@"campaignToken"] forKey: SKStoreProductParameterCampaignToken];
         } else {
             RCTLogInfo(@"[ReactNativeStoreView] campaignToken is not supported on iOS < 8.0. Ignoring");
@@ -134,7 +134,7 @@ RCT_EXPORT_METHOD(dismiss: (BOOL)animated callback: (RCTResponseSenderBlock)call
     }
 
     if ([args objectForKey:@"providerToken"] != nil && [[args objectForKey:@"providerToken"] isKindOfClass:[NSString class]]) {
-        if (@available(iOS 8.3, *)) {
+        if (&SKStoreProductParameterProviderToken != NULL) {
             [nativeParams setObject: [args objectForKey:@"providerToken"] forKey: SKStoreProductParameterProviderToken];
         } else {
             RCTLogInfo(@"[ReactNativeStoreView] providerToken is not supported on iOS < 8.3. Ignoring");
@@ -142,7 +142,7 @@ RCT_EXPORT_METHOD(dismiss: (BOOL)animated callback: (RCTResponseSenderBlock)call
     }
 
     if ([args objectForKey:@"advertisingPartnerToken"] != nil && [[args objectForKey:@"advertisingPartnerToken"] isKindOfClass:[NSString class]]) {
-        if (@available(iOS 9.3, *)) {
+        if (&SKStoreProductParameterAdvertisingPartnerToken != NULL) {
             [nativeParams setObject: [args objectForKey:@"advertisingPartnerToken"] forKey: SKStoreProductParameterAdvertisingPartnerToken];
         } else {
             RCTLogInfo(@"[ReactNativeStoreView] advertisingPartnerToken is not supported on iOS < 9.3. Ignoring");
